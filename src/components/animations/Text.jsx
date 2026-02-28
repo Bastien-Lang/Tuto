@@ -1,23 +1,16 @@
-import { motion, useScroll, useTransform } from "framer-motion";
-import { useRef } from "react";
+import { motion } from "framer-motion";
 
 export default function Text() {
-  const containerRef = useRef(null);
-
-  // TODO (Partie 2) : Utiliser useScroll avec target: containerRef
-  // TODO (Partie 2) : Créer un opacityTransform qui va de 0 à 1 selon le scroll
-
   return (
-    <div ref={containerRef} className="py-20">
+    <div className="py-20 flex justify-center">
         <motion.div 
-            className="text-xl text-gray-800 max-w-[80%] md:max-w-[40%] text-left"
-            // TODO (Option simple) : Utiliser whileInView pour déclencher l'anim au scroll
-            // whileInView={{ opacity: 1, y: 0 }}
-            // viewport={{ once: true, margin: "-100px" }}
+            className="text-xl text-gray-800 max-w-[80%] md:max-w-[50%] leading-loose"
+            //TODO : Ajoutez une animation d'entrée pour ce bloc de texte
         >
-            <span >
-                Lorem ipsum dolor sit amet... (votre texte)
-            </span>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                Magni vitae, facere odio reiciendis distinctio, fuga adipisci molestiae...
+            </p>
         </motion.div>
     </div>
   );
