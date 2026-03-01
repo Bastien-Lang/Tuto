@@ -2,6 +2,13 @@ import { motion, useScroll, useSpring } from "framer-motion";
 
 export default function Header() {
   //TODO : Ajoutez une barre de progression en haut du header qui indique la progression du scroll de la page (creez une variable scaleX qui utilise useScroll et useSpring pour animer la barre de progression)
+  const { scrollYProgress } = useScroll(); 
+  // Le "Spring" rend le mouvement fluide même si l'utilisateur scrolle par saccades
+  const scaleX = useSpring(scrollYProgress, {
+    stiffness: 100,
+    damping: 30,
+    restDelta: 0.001
+  });
 
   return (
     <header className="fixed top-0 w-full z-50 bg-gray-800 text-white flex flex-col p-4 shadow-lg">
